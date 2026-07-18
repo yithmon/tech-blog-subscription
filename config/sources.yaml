@@ -1,0 +1,114 @@
+# Tech Blog Subscription Sources Configuration
+# Used by weekly digest automation
+
+sources:
+  english:
+    - id: zara-zhang
+      name: "Zara Zhang"
+      type: substack
+      url: https://zarazhang.substack.com
+      x: "@ZaraZhangRui"
+      frequency: weekly
+      priority: 2
+      focus: "AI humanities, narrative structure, build-for-one"
+
+    - id: eugene-wei
+      name: "Eugene Wei"
+      type: substack
+      url: https://www.eugenewei.substack.com
+      x: "@eugenewei"
+      frequency: monthly
+      priority: 3
+      focus: "Platform philosophy, attention economy, deep thinking"
+
+    - id: dan-shipper
+      name: "Dan Shipper (Chain of Thought)"
+      type: newsletter
+      url: https://every.to/chain-of-thought
+      x: "@danshipper"
+      frequency: weekly
+      priority: 5
+      focus: "AI solo builder, agent deployment, workflow design"
+
+    - id: simon-willison
+      name: "Simon Willison"
+      type: blog
+      url: https://simonwillison.net
+      substack: https://simonw.substack.com
+      x: "@simonw"
+      frequency: daily
+      priority: 1
+      focus: "AI tools, agentic engineering, evaluation, open source"
+
+    - id: lenny-rachitsky
+      name: "Lenny Rachitsky"
+      type: newsletter
+      url: https://www.lennysnewsletter.com
+      x: "@lennysrachitsky"
+      frequency: weekly
+      priority: 5
+      focus: "AI product sense, industry case studies, PM in AI era"
+
+    - id: andrej-karpathy
+      name: "Andrej Karpathy"
+      type: substack
+      url: https://karpathy.substack.com
+      x: "@karpathy"
+      frequency: monthly
+      priority: 6
+      focus: "Software 3.0, AGI philosophy, jagged intelligence"
+
+  chinese:
+    - id: wei-shijie
+      name: "卫诗婕｜商业漫谈"
+      type: wechat+podcast
+      podcast: "卫诗婕｜漫谈Light the Star"
+      platform: xiaoyuzhou
+      frequency: weekly
+      priority: 4
+      focus: "Deep industry narrative, founder interviews, AI business"
+
+    - id: guigu-101
+      name: "硅谷101｜陈茜"
+      type: wechat+podcast
+      podcast: "硅谷101"
+      platform: xiaoyuzhou
+      frequency: weekly
+      priority: 6
+      focus: "China-US AI comparison, compute economics, industry intel"
+
+    - id: kazike
+      name: "数字生命卡兹克"
+      type: wechat+x
+      x: "@Rockhazix"
+      github: "KKKKhazix"
+      frequency: weekly
+      priority: 4
+      focus: "AI workflow, side-projects, open-source skills, one-person company"
+
+    - id: guo-yu
+      name: "郭宇 (guoyu.eth)"
+      type: x+mirror
+      x: "@turingou"
+      mirror: https://paragraph.com/0xd6db919fdddbed1ce19973156b49e51959408e9e
+      frequency: monthly
+      priority: 6
+      focus: "Tech aesthetics, knowledge work future, individual choices"
+
+    - id: zhang-xiaojun
+      name: "张小珺｜商业访谈录"
+      type: wechat+podcast
+      podcast: "张小珺Jùn｜商业访谈录"
+      wechat: "语言即世界language is world"
+      platform: xiaoyuzhou
+      frequency: weekly
+      priority: 6
+      focus: "Ultra-deep AI interviews, capital narrative, power structures"
+
+# Automation settings
+automation:
+  digest_day: friday
+  digest_time: "16:00"
+  timezone: "Asia/Shanghai"
+  output_dir: "digests/"
+  format: markdown

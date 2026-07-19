@@ -2,7 +2,7 @@
 
 Personal curated tech blog/newsletter subscription tracker. Focused on AI cognition, individual builders, and tech-humanities intersection.
 
-**Owner:** yithmon (cognitive psychology -> AI cognitive scientist)
+**Owner:** yithmon (Cognitive Psychology | Data Scientist | Human-AI ‌collaboration‌)
 **Started:** 2026-07-18
 **Update cadence:** Weekly digest (every Friday)
 

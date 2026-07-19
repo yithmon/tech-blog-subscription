@@ -11,6 +11,8 @@ Personal curated tech blog/newsletter subscription tracker. Focused on AI cognit
 ```
 .
 ├── README.md              # This file - subscription list & reading guide
+├── frameworks/            # Foundational thinking frameworks (long-lived, extensible)
+│   └── ai-cognitive-science-three-propositions.md  # 3-proposition coordinate system
 ├── reviews/               # Periodic content reviews
 │   └── 2026-H1-review.md # 2026 H1 comprehensive review
 ├── digests/               # Weekly digests (auto-generated)

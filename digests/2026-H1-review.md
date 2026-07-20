@@ -304,35 +304,131 @@
 
 ---
 
-### 5.4 Dan Shipper / Every — AI 原生媒体 × 软件工厂
+### 5.4 Dan Shipper / Every — "咨询公司伪装成媒体"
 
-| 项目 | 形态 | 解决什么 |
-|---|---|---|
-| **Proof**（03-11 发布，开源） | 在线文档编辑器 | 人-AI 协作编辑：绿色=人写、紫色=AI写，带修订追踪；免费、无需登录 |
-| **Cora / Sparkle / Spiral / Lex** | SaaS 产品矩阵 | AI 写作/研究/工作流工具 |
-| **Claudy** | 内部 AI agent | 绑定 Every 咨询业务的智能体 |
-| **"Agent Native" 框架** | 方法论 + 公开指南 | 产品同时为人类和 AI agent 设计（审批、可读日志、回滚） |
-| **咨询业务** | 服务 | 帮企业变成 AI-native，年收入 $1M+ |
+**公司实体**：Every（布鲁克林，2020 年创立）。联合创始人 Dan Shipper（CEO）+ Nathan Baschez（后独立运营 Lex）。2025 年中 ~15 人，2026 年 5 月增至 **27 名全职**（Business Insider），另有 EIR（驻场创业者）和 contractor。融资 <$2M（Reid Hoffman 领投）。内部运行命名 AI agent：Friday、Charlie（专项 agent 并行）、Claudie（咨询 PM agent，基于 Opus 4.5，住在 GitHub + Google Workspace 里，自动写 slide deck、组装 sales proposal、从通话录音更新任务看板）。
 
-**创新点**：5 个产品 100% AI 写代码、极小团队运营、$1.2M ARR。Proof 的"作者归属可视化"解决了 AI 协作中最基本的信任问题——谁写了什么。"Agent Native"架构把 AI agent 当一等用户而非附属工具。
+**产品矩阵**：
 
-**商业模式**：媒体（日更 AI newsletter + 播客）+ SaaS 产品 + 咨询（$1M+/年）。七位数总收入，Proof 零推理成本（用户自带 AI）。
+| 产品 | 做什么 | 定价 | 状态 |
+|---|---|---|---|
+| **Proof**（03-11，开源） | Agent-first 协作编辑器：绿边=人写、紫边=AI写；agent 通过链接加入为"协作者"，可提议编辑/开评论线程，人 accept/reject | 免费、无需登录 | 上线 X 帖 58.9 万浏览；几天内数千文档→服务器崩溃 |
+| **Cora** | AI 邮件管理：摘要/归档/每日 brief | 含在 $20 bundle | 两个工程师构建 |
+| **Sparkle** | Mac 文件整理器 | 含在 bundle | 首版失败→14 天 AI sprint 重建→数千用户 |
+| **Spiral** | Prompt 复用器：源材料→标题/社交帖/摘要 | 含在 bundle | 从内部周日 digest 工具长出来；"已赚六位数" |
+| **Monologue** | Mac 语音转文字，"按你说话方式写" | $10/月独立或含 bundle | 团队"几乎不再打字" |
+| **Lex** | AI 写作 app | — | 已 spin-out 独立公司（Nathan CEO，True Ventures $2.75M seed） |
+
+**"100% AI 写代码"的真实工作流**：两个工程师不手写代码。流程：Monologue 语音口述想法 → Claude Code 自定义命令把口述变成结构化 GitHub issue（问题/方案/技术笔记/实现步骤/相关代码）→ **人先审方案**（让 Claude 像好 PM 一样反问自己）→ 确认后才让 agent 写代码。一周产出：6 feature + 5 bugfix + 3 基建更新。工具排名：Claude Code > Amp > Friday > Windsurf > Copilot。Dan 个人单月 Codex 账单 **$13,000**（"COO 给了我一记白眼"）。政策："只要不花到破产就行。"
+
+**Proof 为什么免费还能活**：Proof 本身**不跑任何 AI 推理**——它是协调/编辑层，不是 AI。智能来自你自己的 agent（ChatGPT/Claude/Codex），你把文档链接丢给它，agent 以 `X-Agent-Id` header 标识身份加入。AI 账单在 OpenAI/Anthropic 那边，Every 边际成本为零。所以可以完全免费+开源，纯做漏斗顶部 + credibility。
+
+**收入结构（2026 年 3 月数据，第三方 LinkedIn 拆解）**：
+
+| 收入线 | 月收入 | 占比 | 说明 |
+|---|---|---|---|
+| 订阅（$20/月 bundle） | ~$250K | ~41% | 29K+ 订阅者 |
+| **咨询** | **~$215K** | **~35%** | 2025.02 公开启动，13 个月后已接近订阅体量 |
+| 课程 | ~$77K | ~13% | |
+| 软件单卖 | ~$63K | ~10% | 故意做小（Dan 称之为"Creator Ceiling"） |
+
+$1.2M ARR 是订阅/软件 run-rate；咨询年化 ~$2.5M 是额外叠加。**咨询才是现金引擎，软件是 credibility 道具。** 月增速 ~15%。
+
+**咨询到底卖什么**（"Agent-Native Consulting"）：
+
+四步流程：Set strategy → Build workflows → Train teams → Support（持续"首席 AI 官"式顾问）。具体交付物：AI baseline 评估 + 自动化点映射；接私有数据的定制 agent/Claude skill/Custom GPT；无人工交接的全自动工作流；Claude Code 培训（"plan-delegate-assess-compound"框架）；行业 playbook（金融/科技专场）；内部"AI champion"识别与赋能。案例：投资备忘录从三周→30 分钟；咨询负责人用 Claudie 把 PM 工作从 15h/周→1h/周。客户：纽约时报、管理 $100B+ 的对冲基金、大型律所、70 人招聘公司。已服务"近两打组织"，与 100+ 公司洽谈。定价未公开。
+
+**飞轮**：
+
+```
+(1) LIVE IN THE FUTURE          (4) TEACH WHAT WORKS
+ 员工重度用 AI，内部 agent      咨询 + 课程 + 文章
+ (Friday/Charlie/Claudie)       把方法论卖给企业
+ 吸收工具的强项与极限                 │
+      │                              ▼
+      ▼                         (3) BUILD WHAT'S MISSING
+(2) WRITE WHAT YOU SEE          读者需求 + 客户痛点
+ 日更文章/播客测试想法；         → 发一个小产品
+ 读者反应 = 廉价 R&D            (Proof/Cora/Sparkle/
+ (Spiral/Proof/Cora 都          Spiral/Monologue)
+  始于内容/观察)                      │
+      ▲                              │
+      └──── 产品 & 客户 ─────────────┘
+            生成新内容
+```
+
+机械逻辑：免费内容建 29K 受众和权威 → 受众转化为 $20 订阅 + 高价咨询线索 → 咨询暴露真实企业痛点并养活公司 → 痛点变成产品和新文章 → 循环。咨询是最高杠杆节点：既赚钱、又生产产品创意、又生产内容。
 
 ---
 
-### 5.5 Lenny Rachitsky — PM 教育帝国 + Product Pass 创新
+### 5.5 Lenny Rachitsky — "分发渠道伪装成个人博客"
 
-| 项目 | 形态 | 解决什么 |
+**核心资产**：120 万产品经理/创始人的注意力。零全职员工，~10 个全球 contractor。CNBC 确认年收入 $1M+（实际远高于此）。
+
+**订阅分层（关键设计）**：
+
+| 层 | 价格 | 你得到什么 | 没有什么 |
+|---|---|---|---|
+| Free | $0 | 每周一封邮件 | 无存档、无社群、无工具包 |
+| Monthly | $20/月 | 全文 + 500+ 篇存档 + 4万人 Slack | **无 Product Pass** |
+| **Annual** | **$200/年** | 以上全部 + **Product Pass（25+ 工具免费一年）** | 无优先抢位 |
+| **Insider** | **$400/年** | 以上全部 + 9 个独占工具 + 所有工具包**优先抢位** | — |
+
+设计意图：Product Pass 只给年费和 Insider，月付没有——逼你升级年付。另有 "I Can Expense It" 层（~$300/年）+ 团队价（5 席起 9 折），附模板邮件帮你找老板报销 L&D 预算。
+
+**Product Pass 的齿轮（核心创新）**：
+
+订阅者侧：付 $200/年，拿到 25+ 个 SaaS 工具一年免费使用权（总价值 $30,000+）。具体包括 PostHog Scale（$16,500）、Intercom Fin（$7,140）、Amp（$1,825）、Granola（$1,680）、Mobbin（$1,440）、Devin（$1,350）、Linear（$1,080）、Framer（$360）、ElevenLabs（$264）、Lovable（$252）、Perplexity（$240）、Cursor、n8n、Canva 等。每个工具单独去合作伙伴网站兑换，必须是新用户，取消订阅则全部失效。目录每季度轮换。9 个 Insider 独占（Cursor、Stripe Atlas、Google AI Pro、Supabase Pro 等）。
+
+SaaS 公司侧：把一年免费额度给 Lenny，换取**直接触达 120 万高意图产品决策者**的分发渠道。这些人已在用 AI 工具、有预算、有决策权——比投广告精准得多。用户免费用一年，习惯了转付费。Perplexity 合作当天创下 newsletter **历史最大单日增长**。具体合作伙伴付给 Lenny 多少钱（flat fee / rev-share / CPA）**未公开**——这是公开记录中最大的空白。
+
+Lenny 侧：不付任何工具成本（合作伙伴出），但 Product Pass 让 $200 年费变成"不买就亏"（$200 换 $30,000），转化率自然高。
+
+**播客（比 newsletter 更赚钱）**：CNBC 确认播客年收入 **>$500K，且超过 newsletter 本身**。单期 10-20 万下载，~90 分钟，4.9★，全球 Top-10 科技播客。60+ 个赞助商（Notion、Linear、Mercury、Amplitude、PostHog、Retool、Superhuman 等）。具体 CPM 未公开（行业估算五位数/期）。另有 Lenny's Reads（AI 朗读摘要）和 Lightning Round（独立节目）。
+
+**社群（留存工具，非收入源）**：4 万人 Slack 是付费附赠品，不单独收费。作用：让你不想退订。里面有 peer Q&A、AMA、五大洲 meetup、mentorship。Lenny 团队产出 community digest（算入每月 ~25 个内容资产）。
+
+**峰会**：1200 人（2026 年 9 月 10 日，旧金山 SVN West）。申请制（不是买票就能进），一天，战术演讲 + 圆桌 + 博览会。Stripe 赞助。票价未公开，模式是"赞助补贴 + 稀缺性溢价"。
+
+**零员工运营**：硬性规则不雇全职。~10 个 contractor：Jordan Bornstein 工作室做播客制作、Claire Vo 主持 AI 节目、编辑团队帮 guest essay 做数月打磨。Lenny 每周收到 ~200 个采访请求，拒绝 99.9%（预写模板）。下午 3 点前不开会，每年 4 周强制休假。AI 辅助备采（11 问 intake form + AI 背景 brief + LLM 生成替代提问）。
+
+**收入估算**：
+
+| 收入线 | 年化 | 来源 |
 |---|---|---|
-| **Newsletter**（120 万读者） | Substack #1 商业通讯 | PM/产品知识民主化 |
-| **Product Pass** | 订阅权益 | 打包 25+ 付费 AI/产品工具（价值 $30,000+），订阅者免费用 |
-| **Community**（4 万人 Slack） | 私有社群 | PM/创始人网络效应：mentorship、AMA、五大洲 meetup |
-| **Podcast 矩阵** | 主播客 + Lenny's Reads + Lightning Round | 多格式覆盖，单期 10-20 万下载 |
-| **1200 人年度峰会** | 线下活动 | 社区凝聚 + 品牌 |
+| 订阅（~18K-20K 付费 × $200-400） | ~$1.5-2M | 推算 |
+| 播客赞助 | >$500K | CNBC 确认 |
+| Product Pass 合作 | 未公开 | 最大空白 |
+| 峰会 | 未公开 | 赞助补贴 |
+| **合计** | **数百万美元** | Lenny 不确认精确数字 |
 
-**创新点**：Product Pass 是创作者经济的新物种——SaaS 公司付费获得分发渠道，订阅者获得 $30K+ 工具包，Lenny 获得增长飞轮。首次 Perplexity 合作当天创下"newsletter 历史最大增长日"。零全职员工、~10 个全球 contractor。
+**飞轮**：
 
-**商业模式**：付费订阅（$20/月或 $200/年）+ Insider 层（$400/年）+ Product Pass 合作分成 + 播客赞助 + 峰会。CNBC 确认年收入 $1M+。
+```
+免费周报（120万漏斗顶部）
+      │
+      ▼
+付费订阅 + 4万人 Slack（留存）
+      │
+      ▼
+Product Pass 让年费成为 no-brainer
++ 拉 SaaS 合作伙伴进来
+      │
+      ▼
+合作伙伴 & 嘉宾 → 喂播客
+（播客赚最多钱 + 触达新受众）
+      │
+      ▼
+播客嘉宾 + 社群密度 → 支撑峰会
+（赞助补贴 + 品牌 + 内容采集）
+      │
+      ▼
+峰会内容 + ~25 月度资产 → 回收为 newsletter
+      │
+      └──── 循环：每个资产降低下一个的 CAC ────┘
+```
+
+**增长关键拐点**：2019.06 免费起步 → 2020.04 开付费墙（6 周 $56K ARR，450 付费）→ 2021.02 $300K ARR → 2022.06 播客上线（分发加速器）→ 2023.04 Substack 推荐算法 + First Round 供稿（18K 付费，~$1.5-2M/yr）→ 2024.10 首届峰会 → 2025.03 Product Pass 时代（100 万总订阅）→ 2026.04 达 120 万。
 
 ---
 

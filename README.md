@@ -16,9 +16,13 @@ Personal curated tech blog/newsletter subscription tracker. Focused on AI cognit
 ├── reviews/               # Periodic content reviews
 │   └── 2026-H1-review.md # 2026 H1 comprehensive review
 ├── digests/               # Weekly digests (auto-generated)
-│   └── .gitkeep
-└── config/
-    └── sources.yaml       # Machine-readable subscription config
+│   └── 2026-W29.md       # First issue (scaffold + H1-review seed)
+├── config/
+│   └── sources.yaml       # Machine-readable subscription config (drives automation)
+├── scripts/
+│   └── generate_digest.py # Weekly digest generator (zero-dep, reads sources.yaml)
+└── .github/workflows/
+    └── weekly-digest.yml  # Scheduled: every Fri 16:00 Asia/Shanghai
 ```
 
 ## Subscription List
@@ -56,3 +60,27 @@ Personal curated tech blog/newsletter subscription tracker. Focused on AI cognit
 - Substack: subscribe to free tier only; paid unlocks deep columns
 - Read in weekly batches, avoid fragmented scrolling
 - Focus on their structure: question -> reasoning -> small project validation
+
+## 周刊如何运作 (Weekly Digest)
+
+周刊是**脚手架 + 手填批注**的混合体：脚本负责把「本周该读谁、在三轴上该看什么位」自动排好，真实批注由 owner 每周读完手填（对应 frameworks 里的「我的批注」占位）。
+
+**自动生成（CI）**
+- `.github/workflows/weekly-digest.yml` 每周五 16:00 (Asia/Shanghai) 触发，运行 `scripts/generate_digest.py`，把新周刊提交到 `digests/YYYY-Www.md`。
+- 频率规则：`daily` / `weekly` 源每周纳入；`monthly` 源约每 4 周纳入一次（ISO 周号 % 4 == 1）。
+- 来源清单、优先级、频率全部来自 `config/sources.yaml`，改配置即改周刊，无需动脚本。
+
+**本地手动生成**
+```bash
+python scripts/generate_digest.py                 # 最近一个已结束的周
+python scripts/generate_digest.py --week 2026-W29 # 指定周
+python scripts/generate_digest.py --dry-run       # 只预览不写文件
+```
+脚本零外部依赖（内置 YAML 子集解析，优先用 PyYAML），本地与 CI 均可直接跑。
+
+**每期结构**
+1. 本周阅读清单（按优先级 + 频率筛选，含预计时长）
+2. 三命题坐标 · 本周落点（待填）
+3. 逐源笔记位（三轴定位 / 补了哪块 / 我的批注）
+4. 跨源信号（待填）
+5. 关于本文件（自动化说明）

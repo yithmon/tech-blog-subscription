@@ -29,14 +29,48 @@ Personal curated tech blog/newsletter subscription tracker. Focused on AI cognit
 
 ### English (Priority)
 
-| # | Author | Platform | Link | Positioning | Reading Focus |
-|---|--------|----------|------|-------------|---------------|
-| 1 | Zara Zhang | Substack | [zarazhang.substack.com](https://zarazhang.substack.com) | AI + humanities, Harvard psych, side-project builder | Narrative structure, "build for one" philosophy |
-| 2 | Eugene Wei | Substack | [eugenewei.substack.com](https://www.eugenewei.substack.com) | Tech media philosophy, platform evolution | Attention economy, status games, deep thinking |
-| 3 | Dan Shipper | Every | [every.to/chain-of-thought](https://every.to/chain-of-thought) | AI-era solo builder, one-person company | Agent deployment practice, workflow design |
-| 4 | Simon Willison | Blog | [simonwillison.net](https://simonwillison.net) | Django creator, hands-on AI tools | Tool building, AI evaluation, agentic engineering |
-| 5 | Lenny Rachitsky | Newsletter | [lennysnewsletter.com](https://www.lennysnewsletter.com) | Ex-Airbnb PM, product + AI industry | AI product sense, industry case studies |
-| 6 | Andrej Karpathy | Substack/Blog | [karpathy.substack.com](https://karpathy.substack.com) | Ex-OpenAI, AGI philosophy | Software 3.0, jagged intelligence, tech philosophy |
+#### Core Seeds
+
+| # | Author | Platforms | Positioning | Reading Focus |
+|---|--------|-----------|-------------|---------------|
+| 1 | Zara Zhang | [Substack](https://zarazhang.substack.com) · [X @ZaraZhangRui](https://x.com/ZaraZhangRui) · [GitHub](https://github.com/zarazhangrui) | AI + humanities, Harvard psych, side-project builder | Narrative structure, "build for one" philosophy |
+| 2 | Eugene Wei | [Substack](https://www.eugenewei.substack.com) · [X @eugenewei](https://x.com/eugenewei) | Tech media philosophy, platform evolution | Attention economy, status games, deep thinking |
+| 3 | Dan Shipper | [Every.to](https://every.to/chain-of-thought) · [X @danshipper](https://x.com/danshipper) · [YouTube: AI & I](https://www.youtube.com/@aiandishow) | AI-era solo builder, one-person company | Agent deployment practice, workflow design |
+| 4 | Simon Willison | [Blog](https://simonwillison.net) · [X @simonw](https://x.com/simonw) · [GitHub](https://github.com/simonw) · [Substack](https://simonw.substack.com) | Django creator, hands-on AI tools | Tool building, AI evaluation, agentic engineering |
+| 5 | Lenny Rachitsky | [Newsletter](https://www.lennysnewsletter.com) · [X @lennysrachitsky](https://x.com/lennysrachitsky) · [YouTube](https://www.youtube.com/@LennyRachitsky) · [Podcast](https://www.lennyspodcast.com/) · [Community](https://www.lennysnewsletter.com/p/community) | Ex-Airbnb PM, product + AI industry | AI product sense, industry case studies |
+| 6 | Andrej Karpathy | [Substack](https://karpathy.substack.com) · [X @karpathy](https://x.com/karpathy) · [GitHub](https://github.com/karpathy) · [YouTube](https://www.youtube.com/@AndrejKarpathy) | Ex-OpenAI/Anthropic, AGI philosophy | Software 3.0, jagged intelligence, tech philosophy |
+
+#### AI Engineering Practice
+
+| # | Author | Platforms | Positioning | Reading Focus |
+|---|--------|-----------|-------------|---------------|
+| 7 | Addy Osmani | [Blog](https://addyosmani.com/blog/) · [X @addyosmani](https://x.com/addyosmani) · [GitHub](https://github.com/addyosmani) | Google Chrome/Gemini eng lead; agentic coding at scale | Agent orchestration, loop engineering, production patterns |
+| 8 | Eugene Yan | [Blog](https://eugeneyan.com/) · [X @eugeneyan](https://x.com/eugeneyan) · [GitHub](https://github.com/eugeneyan) | Anthropic MTS; applied-llms.org co-author | LLM production architecture, evals, reusable patterns |
+| 9 | Jason Liu | [Blog](https://jxnl.co/) · [X @jxnlco](https://x.com/jxnlco) · [GitHub](https://github.com/jxnl) | Instructor lib author; structured LLM outputs | Agent architecture, contrarian takes with working code |
+| 10 | Hamel Husain | [Blog](https://hamel.dev/) · [X @HamelHusain](https://x.com/HamelHusain) · [Substack](https://hamelhusain.substack.com/) · [GitHub](https://github.com/hamelsmu) | Evals specialist; Parlance Labs; OSS ML tooling | AI measurement, debugging, "does it actually work?" |
+| 11 | swyx (Shawn Wang) | [Latent Space](https://www.latent.space/) · [X @swyx](https://x.com/swyx) · [ai.engineer](https://www.ai.engineer/) | "AI Engineer" movement founder; AINews daily | Field mapping, who's building what, emerging patterns |
+
+#### AI Product & Design
+
+| # | Author | Platforms | Positioning | Reading Focus |
+|---|--------|-----------|-------------|---------------|
+| 12 | Julie Zhuo | [Substack: The Looking Glass](https://lg.substack.com/) · [X @joulee](https://x.com/joulee) | Ex-Meta VP Design (13yr); AI taste & craft | AI × design judgment, product craft in AI era |
+| 13 | Sachin Rekhi | [Substack](https://www.sachinrekhi.com/) · [X @sachinrekhi](https://x.com/sachinrekhi) | AI-era PM practitioner frameworks | Hands-on AI PM craft, prototyping, ops |
+
+#### AI + Cognitive Science
+
+| # | Author | Platforms | Positioning | Reading Focus |
+|---|--------|-----------|-------------|---------------|
+| 14 | Dan Williams | [Substack: Conspicuous Cognition](https://www.conspicuouscognition.com/) · [X @danwilliams](https://x.com/danwilliams) · [Podcast](https://www.conspicuouscognition.com/) | Cognitive scientist; AI × metacognition research | What AI does to human thinking, cognitive offloading |
+| 15 | Amanda Askell | [X @AmandaAskell](https://x.com/AmandaAskell) · [Blog](https://askell.io/) | Anthropic Claude character designer; philosophy PhD | AI character/values, philosophy of mind in practice |
+| 16 | Eva Keiffenheim | [Substack](https://evakeiffenheim.substack.com/) · [X @EvaKeiffenheim](https://x.com/EvaKeiffenheim) | Learning sciences MSc; AI × creativity & cognition | AI's cognitive impact, collective creativity, learning |
+
+#### Indie AI Builders
+
+| # | Author | Platforms | Positioning | Reading Focus |
+|---|--------|-----------|-------------|---------------|
+| 17 | Marc Lou | [Newsletter: Just Ship It](https://newsletter.marclou.com/) · [X @marc_louvion](https://x.com/marc_louvion) · [shipfa.st](https://shipfa.st/) | 35+ startups in 4yr; $1M+ revenue; AI-first micro-SaaS | Solo builder economics, ship-fast, revenue-transparent |
+| 18 | Thorsten Ball | [Newsletter: Register Spill](https://registerspill.thorstenball.com/) · [X @thorstenball](https://x.com/thorstenball) · [GitHub](https://github.com/tsball) | Ex-Zed (built coding agents); implementation depth | Building agents (not using them), code + beauty |
 
 ### Chinese
 

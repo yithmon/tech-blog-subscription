@@ -3,11 +3,13 @@
 
 sources:
   english:
+    # ─── Core Seeds ───
     - id: zara-zhang
       name: "Zara Zhang"
       type: substack
       url: https://zarazhang.substack.com
       x: "@ZaraZhangRui"
+      github: "zarazhangrui"
       frequency: weekly
       priority: 2
       focus: "AI humanities, narrative structure, build-for-one"
@@ -26,6 +28,7 @@ sources:
       type: newsletter
       url: https://every.to/chain-of-thought
       x: "@danshipper"
+      youtube: "https://www.youtube.com/@aiandishow"
       frequency: weekly
       priority: 5
       focus: "AI solo builder, agent deployment, workflow design"
@@ -36,6 +39,7 @@ sources:
       url: https://simonwillison.net
       substack: https://simonw.substack.com
       x: "@simonw"
+      github: "simonw"
       frequency: daily
       priority: 1
       focus: "AI tools, agentic engineering, evaluation, open source"
@@ -45,6 +49,8 @@ sources:
       type: newsletter
       url: https://www.lennysnewsletter.com
       x: "@lennysrachitsky"
+      youtube: "https://www.youtube.com/@LennyRachitsky"
+      podcast: "https://www.lennyspodcast.com/"
       frequency: weekly
       priority: 5
       focus: "AI product sense, industry case studies, PM in AI era"
@@ -54,9 +60,129 @@ sources:
       type: substack
       url: https://karpathy.substack.com
       x: "@karpathy"
+      github: "karpathy"
+      youtube: "https://www.youtube.com/@AndrejKarpathy"
       frequency: monthly
       priority: 6
       focus: "Software 3.0, AGI philosophy, jagged intelligence"
+
+    # ─── AI Engineering Practice ───
+    - id: addy-osmani
+      name: "Addy Osmani"
+      type: blog
+      url: https://addyosmani.com/blog/
+      x: "@addyosmani"
+      github: "addyosmani"
+      frequency: weekly
+      priority: 3
+      focus: "Agentic coding at scale, agent orchestration, loop engineering"
+
+    - id: eugene-yan
+      name: "Eugene Yan"
+      type: blog
+      url: https://eugeneyan.com/
+      x: "@eugeneyan"
+      github: "eugeneyan"
+      frequency: monthly
+      priority: 3
+      focus: "LLM production architecture, evals, reusable patterns"
+
+    - id: jason-liu
+      name: "Jason Liu"
+      type: blog
+      url: https://jxnl.co/
+      x: "@jxnlco"
+      github: "jxnl"
+      frequency: monthly
+      priority: 4
+      focus: "Agent architecture, structured outputs, contrarian practice"
+
+    - id: hamel-husain
+      name: "Hamel Husain"
+      type: blog+substack
+      url: https://hamel.dev/
+      substack: https://hamelhusain.substack.com/
+      x: "@HamelHusain"
+      github: "hamelsmu"
+      frequency: biweekly
+      priority: 3
+      focus: "AI evals, debugging, measurement, OSS ML tooling"
+
+    - id: swyx
+      name: "swyx (Shawn Wang)"
+      type: newsletter
+      url: https://www.latent.space/
+      x: "@swyx"
+      frequency: daily
+      priority: 4
+      focus: "AI engineering field mapping, emerging patterns, community"
+
+    # ─── AI Product & Design ───
+    - id: julie-zhuo
+      name: "Julie Zhuo"
+      type: substack
+      url: https://lg.substack.com/
+      x: "@joulee"
+      frequency: biweekly
+      priority: 4
+      focus: "AI × design judgment, product craft, taste in AI era"
+
+    - id: sachin-rekhi
+      name: "Sachin Rekhi"
+      type: substack
+      url: https://www.sachinrekhi.com/
+      x: "@sachinrekhi"
+      frequency: biweekly
+      priority: 5
+      focus: "AI-era PM craft, prototyping, operational frameworks"
+
+    # ─── AI + Cognitive Science ───
+    - id: dan-williams
+      name: "Dan Williams"
+      type: substack+podcast
+      url: https://www.conspicuouscognition.com/
+      x: "@danwilliams"
+      frequency: weekly
+      priority: 2
+      focus: "AI × metacognition, cognitive offloading, what AI does to thinking"
+
+    - id: amanda-askell
+      name: "Amanda Askell"
+      type: blog
+      url: https://askell.io/
+      x: "@AmandaAskell"
+      frequency: monthly
+      priority: 3
+      focus: "AI character design, philosophy of mind, values in practice"
+
+    - id: eva-keiffenheim
+      name: "Eva Keiffenheim"
+      type: substack
+      url: https://evakeiffenheim.substack.com/
+      x: "@EvaKeiffenheim"
+      frequency: weekly
+      priority: 4
+      focus: "AI × creativity, cognitive impact, learning sciences"
+
+    # ─── Indie AI Builders ───
+    - id: marc-lou
+      name: "Marc Lou"
+      type: newsletter
+      url: https://newsletter.marclou.com/
+      x: "@marc_louvion"
+      frequency: biweekly
+      priority: 5
+      focus: "Solo AI micro-SaaS, ship-fast, revenue-transparent building"
+
+    - id: thorsten-ball
+      name: "Thorsten Ball"
+      type: newsletter
+      url: https://registerspill.thorstenball.com/
+      x: "@thorstenball"
+      github: "tsball"
+      frequency: biweekly
+      priority: 4
+      focus: "Building coding agents, implementation depth, code + beauty"
 
   chinese:
     - id: wei-shijie

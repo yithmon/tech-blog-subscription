@@ -141,7 +141,7 @@ sources:
       name: "Dan Williams"
       type: substack+podcast
       url: https://www.conspicuouscognition.com/
-      x: "@danwilliams"
+      x: "@danwilliamsphil"
       frequency: weekly
       priority: 1
       focus: "AI × metacognition, cognitive offloading, what AI does to thinking"

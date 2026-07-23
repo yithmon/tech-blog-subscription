@@ -61,7 +61,7 @@ Personal curated tech blog/newsletter subscription tracker. Focused on AI cognit
 
 | # | Author | Platforms | Positioning | Reading Focus |
 |---|--------|-----------|-------------|---------------|
-| 14 | Dan Williams | [Substack: Conspicuous Cognition](https://www.conspicuouscognition.com/) · [X @danwilliams](https://x.com/danwilliams) · [Podcast](https://www.conspicuouscognition.com/) | Cognitive scientist; AI × metacognition research | What AI does to human thinking, cognitive offloading |
+| 14 | Dan Williams | [Substack: Conspicuous Cognition](https://www.conspicuouscognition.com/) · [X @danwilliamsphil](https://x.com/danwilliamsphil) · [Podcast](https://www.conspicuouscognition.com/) | Cognitive scientist; AI × metacognition research | What AI does to human thinking, cognitive offloading |
 | 15 | Amanda Askell | [X @AmandaAskell](https://x.com/AmandaAskell) · [Blog](https://askell.io/) | Anthropic Claude character designer; philosophy PhD | AI character/values, philosophy of mind in practice |
 | 16 | Eva Keiffenheim | [Substack](https://evakeiffenheim.substack.com/) · [X @EvaKeiffenheim](https://x.com/EvaKeiffenheim) | Learning sciences MSc; AI × creativity & cognition | AI's cognitive impact, collective creativity, learning |
 

@@ -14,14 +14,7 @@ sources:
       priority: 2
       focus: "AI humanities, narrative structure, build-for-one"
 
-    - id: eugene-wei
-      name: "Eugene Wei"
-      type: substack
-      url: https://www.eugenewei.substack.com
-      x: "@eugenewei"
-      frequency: monthly
-      priority: 5
-      focus: "Platform philosophy, attention economy, deep thinking"
+    # [已移除 2026-07-24] eugene-wei — Substack 停更自 2021，末篇长文 2023-07，仅 X 短推文活跃
 
     - id: dan-shipper
       name: "Dan Shipper (Chain of Thought)"
@@ -146,14 +139,7 @@ sources:
       priority: 1
       focus: "AI × metacognition, cognitive offloading, what AI does to thinking"
 
-    - id: amanda-askell
-      name: "Amanda Askell"
-      type: blog
-      url: https://askell.io/
-      x: "@AmandaAskell"
-      frequency: monthly
-      priority: 2
-      focus: "AI character design, philosophy of mind, values in practice"
+    # [已移除 2026-07-24] amanda-askell — 本人确认 5 年未写个人博客，写作已通过 Anthropic 职业渠道发布
 
     - id: eva-keiffenheim
       name: "Eva Keiffenheim"

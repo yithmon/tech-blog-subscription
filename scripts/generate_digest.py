@@ -208,6 +208,16 @@ def iso_week_range(year: int, week: int):
     return monday, sunday
 
 
+def digest_window(year: int, week: int):
+    """返回 digest 覆盖窗口：上周五 00:00 至本周四 23:59。
+    即：该 ISO 周周一往前推 3 天（上周五）→ 该 ISO 周周一往后推 3 天（本周四）。
+    共 7 天，锚点为周五生成。"""
+    monday = dt.datetime.strptime(f"{year}-W{week:02d}-1", "%G-W%V-%u")
+    prev_friday = monday - dt.timedelta(days=3)  # 上周五
+    this_thursday = monday + dt.timedelta(days=3)  # 本周四
+    return prev_friday, this_thursday
+
+
 def latest_completed_week(today: dt.date | None = None) -> tuple[int, int]:
     """最近一个「已结束」的周：取包含上一个周五的 ISO 周。
     若今天已过周五，则上周结束；否则再往前推一周。"""
@@ -262,10 +272,10 @@ def sort_key(s: dict):
 # 渲染
 # ---------------------------------------------------------------------------
 def render_digest(year: int, week: int, sources: list[dict], generated: dt.date) -> str:
-    monday, sunday = iso_week_range(year, week)
-    mon_str = monday.strftime("%Y-%m-%d")
-    sun_str = sunday.strftime("%Y-%m-%d")
-    fri = monday + dt.timedelta(days=4)
+    win_start, win_end = digest_window(year, week)
+    start_str = win_start.strftime("%Y-%m-%d")
+    end_str = win_end.strftime("%Y-%m-%d")
+    fri = win_end + dt.timedelta(days=1)  # 生成锚点：窗口结束次日（周五）
     fri_str = fri.strftime("%Y-%m-%d")
 
     inc = [s for s in sources if included_this_week(s, week)]
@@ -274,10 +284,10 @@ def render_digest(year: int, week: int, sources: list[dict], generated: dt.date)
                     for s in inc)
 
     L: list[str] = []
-    L.append(f"# Weekly Digest {year}-W{week:02d}（{mon_str} – {sun_str}）")
+    L.append(f"# Weekly Digest {year}-W{week:02d}（{start_str} – {end_str}）")
     L.append("")
     L.append(f"> 生成日期：{generated.isoformat()} ｜ 框架视角：{FRAMEWORK_NAME}")
-    L.append(f"> 覆盖窗口：本周一至周日（生成锚点周五 {fri_str}）")
+    L.append(f"> 覆盖窗口：上周五至本周四（生成锚点周五 {fri_str}）")
     L.append(f"> 本周待读来源：{len(inc)} 个 ｜ 预计阅读配额：~{total_min} 分钟")
     L.append(f"> 自动生成脚手架，批注由 owner 每周读完手填（对应 frameworks 的「我的批注」）。")
     L.append("")

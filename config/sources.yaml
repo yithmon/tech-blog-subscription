@@ -224,3 +224,7 @@ automation:
   timezone: "Asia/Shanghai"
   output_dir: "digests/"
   format: markdown
+  # 遍历窗口：上周五 00:00 至本周四 23:59（共 7 天）
+  # 生成锚点为周五，窗口结束次日
+  window_start: "prev_friday"   # ISO 周周一 - 3 天
+  window_end: "this_thursday"   # ISO 周周一 + 3 天

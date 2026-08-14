@@ -13,9 +13,22 @@ Personal curated tech blog/newsletter subscription tracker. Focused on AI cognit
 ├── README.md              # This file - subscription list & reading guide
 ├── frameworks/            # Foundational thinking frameworks (long-lived, extensible)
 │   └── ai-cognitive-science-three-propositions.md  # 3-proposition coordinate system
-├── research/              # Deep-dive research notes (命题一的测量学展开)
-│   ├── machine-psychology-evaluation-survey.md     # LLM psychometrics 综述 + 生态效度案例谱系
-│   └── machine-personality-matrix.md               # 六维×情境矩阵（benchmark 映射与行动建议）
+├── founders/              # Tech founders & star scientists research
+│   ├── analysis-podcast-guests-founder-scientist.md  # 3-proposition analysis
+│   ├── sv101_guests_2025-2026.md                   # Silicon Valley 101 guest list
+│   ├── archive/
+│   │   └── company-founder-profiles.md             # Podcast guest company archive
+│   ├── reviews/
+│   │   ├── 三命题持续验证台账.md                    # Evidence ledger
+│   │   └── 科技创始人背景调研-三命题验证.md          # Per-founder background notes
+│   ├── tracking/
+│   │   ├── 2026-08-11.md                           # Cold-start tracking
+│   │   └── 2026-08-14.md                           # Weekly tracking
+│   └── digests/
+│       └── 2026-W32-增刊-播客嘉宾画像专题.md        # Special digest
+├── research/              # Deep-dive research notes (AI cognition & psychometrics)
+│   ├── machine-psychology-evaluation-survey.md     # LLM psychometrics review
+│   └── machine-personality-matrix.md               # Six-dimension situational matrix
 ├── reviews/               # Periodic content reviews
 │   └── 2026-H1-review.md # 2026 H1 comprehensive review
 ├── digests/               # Weekly digests (auto-generated)

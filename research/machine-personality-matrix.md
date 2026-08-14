@@ -6,7 +6,7 @@
 >
 > 方法学底座：Ye et al.《Large Language Model Psychometrics: A Systematic Review of Evaluation, Validation, and Enhancement》（arXiv 2505.08245，v3 2026-03，400+ 参考文献，下称「LLM 心理测量综述」）。
 >
-> 同步说明：本文件为钉钉在线文档《机器人格评测框架：六维×情境矩阵与行动建议》的 Git 沉淀版（2026-08-21，[钉钉链接](https://alidocs.dingtalk.com/i/nodes/P7QG4Yx2Jpx4OolYCQdA0pm5J9dEq3XD)）。上游研究综述见 [machine-psychology-evaluation-survey.md](./machine-psychology-evaluation-survey.md)，框架定位见 `frameworks/ai-cognitive-science-three-propositions.md` 命题一扩展。
+> 同步说明：上游研究综述见 [machine-psychology-evaluation-survey.md](./machine-psychology-evaluation-survey.md)，框架定位见 `frameworks/ai-cognitive-science-three-propositions.md` 命题一扩展。
 
 ## 一、框架说明：为什么改成"构念 × 情境"
 

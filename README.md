@@ -13,6 +13,9 @@ Personal curated tech blog/newsletter subscription tracker. Focused on AI cognit
 ├── README.md              # This file - subscription list & reading guide
 ├── frameworks/            # Foundational thinking frameworks (long-lived, extensible)
 │   └── ai-cognitive-science-three-propositions.md  # 3-proposition coordinate system
+├── research/              # Deep-dive research notes (命题一的测量学展开)
+│   ├── machine-psychology-evaluation-survey.md     # LLM psychometrics 综述 + 生态效度案例谱系
+│   └── machine-personality-matrix.md               # 六维×情境矩阵（benchmark 映射与行动建议）
 ├── reviews/               # Periodic content reviews
 │   └── 2026-H1-review.md # 2026 H1 comprehensive review
 ├── digests/               # Weekly digests (auto-generated)

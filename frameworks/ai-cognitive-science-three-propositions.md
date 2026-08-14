@@ -1,6 +1,6 @@
 # AI 认知科学三命题框架（基础坐标系）
 
-> 版本：v0.3.0 ｜ 建立日期：2026-07-18 ｜ 状态：命题一扩展（machine personality × 生态效度测量）已补充
+> 版本：v0.3.1 ｜ 建立日期：2026-07-18 ｜ 状态：命题一扩展已补充；综述新增 IRT/CTT 方法论路线
 > 用途：作为每周阅读的对照坐标系。每读一篇，问自己「它在三轴的哪个位置、补了哪块」。
 > 背景定位：Cognitive Psychology | Data Scientist | Human-AI collaboration（认知心理学 · 数据科学 · 人机协作）。本框架以认知心理学为主要抓手——**拿 AI 这个前所未有的新标本，把认知心理学的经典概念重做一遍实验**；其中测量与建模（命题一）倚重数据科学，人机边界的判定（命题三）则落在人机协作议题上。
 
@@ -187,3 +187,4 @@ AI 写了一段代码，看着对、测试也过，但有个没想到的边界�
 - 2026-07-19 v0.1.1：背景定位对齐用户最新自述三标签（Cognitive Psychology | Data Scientist | Human-AI collaboration），并标注三维度与命题的对应（认知心理学=主抓手，数据科学→命题一测量建模，人机协作→命题三边界判定）。
 - 2026-07-20 v0.2.0：填入全部 9 个开放问题的回应（含认知科学论证）；三个命题各增加「大住宿 BI 场景锚定」批注（ChatBI 断崖、周报意图层、巡检监督者退化）；新增跨轴连接（routing-policy = 命题一→命题二的工程实现，缺命题三回路）。
 - 2026-08-21 v0.3.0：命题一扩展——machine personality 作为"标尺的另一半"（能力锯齿→人格锯齿的同构论证，三篇实证：Personality Illusion / Value-Action Gap / Alignment Faking，重造标尺三推论：签名而非分数、动态探测、生态效度闭环）；研究材料下沉至新建 `research/` 目录（机器心理学测评综述 + 六维×情境矩阵，含 24 条参考文献与钉钉在线版链接）。
+- 2026-08-21 v0.3.1：综述文档新增 §5.4 测量方法论路线（IRT vs CTT 阶段性分工）——诚实定位 IRT 为"生态效度的工程杠杆"而非哲学必需，明确先 CTT 再 MIRT 再 IRT 的标准 pipeline，梳理 7 项 LLM 评测中 IRT 先行实施（tinyBenchmarks / HELM Rasch / ATLAS CAT / GETA / Leaderboard psychometrics / Chatbot Arena BT / ICML 2025 position paper），标注交互情境下行为签名的 IRT 空白为方法论原创机会；综述参考文献扩至 31 条。

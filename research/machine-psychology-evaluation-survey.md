@@ -1,6 +1,6 @@
 # 机器心理学测评研究综述：LLM Psychometrics 与生态效度测量
 
-> 日期：2026-08-21 ｜ 状态：v1.0
+> 日期：2026-08-21 ｜ 状态：v1.1
 > 定位：三命题框架**命题一（Jagged Intelligence）的测量学展开**——重造标尺不仅要测能力的锯齿，还要测 machine personality；本文梳理领域地图与"超越量表"的先行案例，为开发生态效度测量工具提供依据。
 > 姊妹文档：[machine-personality-matrix.md](./machine-personality-matrix.md)（六维×情境矩阵，含 benchmark 映射与行动建议）
 > 上游材料：《QWEN心理学需求》（钉钉文档，ABCD 四方向）→ 姊妹篇矩阵文档（钉钉文档，2026-08-14 创建）
@@ -127,6 +127,40 @@
 - **标尺自身的心理测量**：LLM-as-judge 本身是 jagged 的，需独立做信效度校准，避免与受试模型同家族。
 - **模型原生构念层**：R1–R6 是人类心理学移植的构念；应预留无监督发现层，允许从行为数据聚类出人类没有的模型原生维度（指令渗透性、persona 粘附度等）。
 
+### 5.4 测量方法论路线：IRT 与 CTT 的阶段性分工
+
+这一节回应一个方法论上的实际问题：Ye et al. 综述把 IRT 列为三大基准构建原则之一，似乎暗示 IRT 是必需。本节更诚实地说清：**IRT 不是哲学必需，但它是把高生态效度测量做成可持续工程的最成熟杠杆；CTT 在早期阶段反而更合适。**
+
+**IRT 的真实贡献与边界。** 生态效度是**题目内容**的属性（情境像不像真实世界），IRT 是**测量统计模型**（给定一组题，测得多准、多省、多可比）。用 IRT 去标定一批低生态效度的选择题，只会得到"更精确的非生态测量"。因此 IRT 不产生生态效度，但它通过四条机制放大并维持生态效度：（1）item 参数（难度/区分度）让大题库可以筛出高信息量小子集，使 nightly 跑高保真交互探针在经济上成立；（2）CAT 形式化了 §5.2 的自适应探测；（3）曝光控制 + 生成题库构成自我更新的活题库，可持续补充生态效度高的新题；（4）潜变量可比性支持跨版本行为回归与 DIF 测量不变性检验。
+
+**但 IRT 的前提假设在 LLM 数据上几乎都违反。** 局部独立性：多轮对话前后项相关；单维性：R1–R6 天然多维；person 参数：模型输出是分布而非单点响应。在这些假设处理干净前上 IRT，"精确测量"比 CTT 粗糙分析更危险——它伪装得更科学。而且 IRT 对样本量要求远高于 CTT（通常需要数百"被试"起步），目前能跑到的主流模型不过几十台，参数估计会抖。
+
+**正确的方法论顺序是先 CTT 再 IRT。** 这是量表开发的标准 pipeline（DeVellis 经典教材）：先用 CTT 做题目分析 + EFA/CFA 建立构念效度，确认维度结构与题目质量，再上 IRT 做精细化标定。在机器人格这个**新构念**上，这不是降级而是方法学上的正确顺序。
+
+**阶段性分工建议：**
+
+| 阶段 | 条件 | 方法选择 | 说明 |
+|---|---|---|---|
+| **Phase 1**（当前） | 探针刚冻结、第一轮数据 | CTT（α、item-total、EFA/CFA） + MIRT（处理 R1–R6 共变） + logistic-regression DIF | 覆盖 ~80% 需求，小样本稳健 |
+| **Phase 2** | 题库 ≥100 项、模型样本 ≥100 | 单维 IRT / Rasch 精细标定 | 为 CAT 做题目参数准备 |
+| **Phase 3** | 自适应探测 / 跨版本 CI 需求 | CAT + common-item equating | IRT 真正不可替代的三个场景 |
+
+**IRT 不可替代的三个场景：**（1）自适应探测——需要 item response 模型预测"这道题对这个被试提供多少信息"，CTT 没有这个语言；（2）两群模型能力差距大时的 DIF——IRT-DIF（Lord χ²、SIBTEST）比 logistic-regression DIF 稳健；（3）跨版本最小锚点集行为回归——IRT equating 比 CTT Tucker/Levine 省锚点且稳健。
+
+**领域已有 IRT 实施（能力侧为主）：**
+
+| 实施 | 范式 | 要点 |
+|---|---|---|
+| tinyBenchmarks（Polo et al.，ICML 2024） | IRT 选题 | 每个基准压到 ~100 题，误差 1–3%，已开源 |
+| Stanford CRFM / HELM（Truong et al. 2025） | Rasch + Fisher 自适应 | 22 数据集、183 模型、78k 题，AUC 0.85，与全集 0.99 相关，已集成进 HELM |
+| ATLAS（Li et al. 2025，arXiv 2511.04689） | 3PL + CAT 完整管线 | 30–78 题逼近全库，曝光率 <10%，识别负区分度坏题 |
+| GETA "Raising the Bar"（Jiang et al. 2024，arXiv 2406.14230） | 生成式进化测试 | 针对价值观测量，生成难度匹配新题，显式借鉴测量论自适应思想 |
+| Improving LLM Leaderboards（arXiv 2501.17200） | 心理测量方法论重排 | 用现代心理测量替代简单平均，HF 榜单排名更稳健 |
+| Chatbot Arena 统计框架（arXiv 2412.18407） | Bradley-Terry/Elo 族 | 本质是偏好 IRT，排名来自真实用户流量，最大规模"生态数据 + 测量模型"实例 |
+| AI Evaluation Should Learn from How We Test Humans（ICML 2025） | 立场论文 | 系统论证 CAT/IRT 式自适应测试该进入 AI 评测 |
+
+**空白与机会：** 现有所有 IRT 实施都在能力侧、静态单轮题上。把 IRT/CAT 搬到交互情境下的行为签名测量（矩阵 R1–R6 行 × S1–S5 列）目前是空白——既是方法论原创点，也是 Ye et al. 综述中"统计测量建模"原则在新领域的真正落地。一个用 CTT 分析的高生态效度交互测试，比一个用 IRT 分析的选择题，生态效度更高；但一个用 IRT 精心选题 + 自适应施测的交互测试，则是生态效度与测量效率的最优解。
+
 ---
 
 ## 六、参考文献（精选）
@@ -141,5 +175,12 @@
 8. [OpenAI: Sycophancy in GPT-4o](https://openai.com/index/sycophancy-in-gpt-4o/)
 9. [Measuring and Controlling Persona Drift in Language Model Dialogs](https://arxiv.org/html/2402.10962v1)（[GitHub](https://github.com/likenneth/persona_drift)）
 10. [Towards Understanding Sycophancy in Language Models — Anthropic](https://arxiv.org/abs/2310.13548)
+11. [tinyBenchmarks: evaluating LLMs with fewer examples — arXiv 2402.14992](https://arxiv.org/abs/2402.14992)（Polo et al.，ICML 2024）
+12. [Reliable and Efficient Amortized Model-Based Evaluation — Stanford CRFM 2025](https://crfm.stanford.edu/2025/06/04/reliable-and-efficient-evaluation.html)（Truong, Tu, Liang, Li, Koyejo）
+13. [Adaptive Testing for LLM Evaluation: A Psychometric Alternative to Static Benchmarks — arXiv 2511.04689](https://arxiv.org/abs/2511.04689)（Li et al.，ATLAS）
+14. [Raising the Bar: Investigating the Values of LLMs via Generative Evolving Testing — arXiv 2406.14230](https://arxiv.org/abs/2406.14230)（Jiang et al.，GETA）
+15. [Improving LLM Leaderboards with Psychometrical Methodology — arXiv 2501.17200](https://arxiv.org/abs/2501.17200)
+16. [A Statistical Framework for Ranking LLM-Based Chatbots — arXiv 2412.18407](https://arxiv.org/abs/2412.18407)（Chatbot Arena 统计框架）
+17. [Position: AI Evaluation Should Learn from How We Test Humans — ICML 2025](https://arxiv.org/abs/2306.10512)
 
-完整参考文献（24 条）见姊妹文档 [machine-personality-matrix.md](./machine-personality-matrix.md) 第七节。
+完整参考文献（31 条）见姊妹文档 [machine-personality-matrix.md](./machine-personality-matrix.md) 第七节。
